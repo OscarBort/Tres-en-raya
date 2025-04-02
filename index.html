@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Tres en raya</title>
+	<link rel="icon" href="img/favicon.png">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/89d2629216.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>TRES EN RAYA</h1>
+    <table id="tablero">
+        <tr>
+            <td id="0" onclick="jugada(0)"><p>v</p></td>
+            <td id="1" onclick="jugada(1)"><p>v</p></td>
+            <td id="2" onclick="jugada(2)"><p>v</p></td>
+        </tr>
+        <tr>
+            <td id="3" onclick="jugada(3)"><p>v</p></td>
+            <td id="4" onclick="jugada(4)"><p>v</p></td>
+            <td id="5" onclick="jugada(5)"><p>v</p></td>
+        </tr>
+        <tr>
+            <td id="6" onclick="jugada(6)"><p>v</p></td>
+            <td id="7" onclick="jugada(7)"><p>v</p></td>
+            <td id="8" onclick="jugada(8)"><p>v</p></td>
+        </tr>
+    </table>
+    <table id="contadores">
+        <tr>
+            <td>Jugador 1</td>
+            <td>Empate</td>
+            <td>Jugador 2</td>
+        </tr>
+        <tr>
+            <td><p id="jug1">0</p></td>
+            <td><p id="emp">0</p></td>
+            <td><p id="jug2">0</p></td>
+        </tr>
+    </table>
+
+    <script>
+
+
+        let jugador = 1;
+        let jugador1 = 0;
+        let jugador2 = 0;
+        let empate = 0;
+        let contador = 0;
+        const tablero = ["v", "v", "v", "v", "v", "v", "v", "v", "v"];
+        let victoria = false;
+
+        function jugada(x){
+            if (tablero[x] === "v"){
+                if(jugador == 1){
+                    tablero [x] = jugador;
+                    document.getElementById(x).innerHTML = "<img src=img/cruz.png>"
+                    contador++;
+                    jugador = 2;
+                    comprobarVictoria();
+                    reiniciarTablero();
+                } else {
+                    tablero [x] = jugador;
+                    document.getElementById(x).innerHTML = "<img src=img/circulo.png>"
+                    contador++;
+                    jugador = 1;
+                    comprobarVictoria();
+                    reiniciarTablero();
+                }
+            }
+        }
+
+        function comprobarVictoria(){
+            if (tablero[0] === 1 && tablero[1] === 1 && tablero[2] === 1){
+                victoria = true;
+                jugador1++;
+                document.getElementById("jug1").innerHTML = jugador1;
+                alert("jugador 1 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[3] === 1 && tablero[4] === 1 && tablero[5] === 1){
+                victoria = true;
+                jugador1++;
+                document.getElementById("jug1").innerHTML = jugador1;
+                alert("jugador 1 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[6] === 1 && tablero[7] === 1 && tablero[8] === 1){
+                victoria = true;
+                jugador1++;
+                document.getElementById("jug1").innerHTML = jugador1;
+                alert("jugador 1 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[0] === 1 && tablero[3] === 1 && tablero[6] === 1){
+                victoria = true;
+                jugador1++;
+                document.getElementById("jug1").innerHTML = jugador1;
+                alert("jugador 1 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[1] === 1 && tablero[4] === 1 && tablero[7] === 1){
+                victoria = true;
+                jugador1++;
+                document.getElementById("jug1").innerHTML = jugador1;
+                alert("jugador 1 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[2] === 1 && tablero[5] === 1 && tablero[8] === 1){
+                victoria = true;
+                jugador1++;
+                document.getElementById("jug1").innerHTML = jugador1;
+                alert("jugador 1 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[0] === 1 && tablero[4] === 1 && tablero[8] === 1){
+                victoria = true;
+                jugador1++;
+                document.getElementById("jug1").innerHTML = jugador1;
+                alert("jugador 1 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[2] === 1 && tablero[4] === 1 && tablero[6] === 1){
+                victoria = true;
+                jugador1++;
+                document.getElementById("jug1").innerHTML = jugador1;
+                alert("jugador 1 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[0] === 2 && tablero[1] === 2 && tablero[2] === 2){
+                victoria = true;
+                jugador2++;
+                document.getElementById("jug2").innerHTML = jugador2;
+                alert("jugador 2 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[3] === 2 && tablero[4] === 2 && tablero[5] === 2){
+                victoria = true;
+                jugador2++;
+                document.getElementById("jug2").innerHTML = jugador2;
+                alert("jugador 2 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[6] === 2 && tablero[7] === 2 && tablero[8] === 2){
+                victoria = true;
+                jugador2++;
+                document.getElementById("jug2").innerHTML = jugador2;
+                alert("jugador 2 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[0] === 2 && tablero[3] === 2 && tablero[6] === 2){
+                victoria = true;
+                jugador2++;
+                document.getElementById("jug2").innerHTML = jugador2;
+                alert("jugador 2 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[1] === 2 && tablero[4] === 2 && tablero[7] === 2){
+                victoria = true;
+                jugador2++;
+                document.getElementById("jug2").innerHTML = jugador2;
+                alert("jugador 2 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[2] === 2 && tablero[5] === 2 && tablero[8] === 2){
+                victoria = true;
+                jugador2++;
+                document.getElementById("jug2").innerHTML = jugador2;
+                alert("jugador 2 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[0] === 2 && tablero[4] === 2 && tablero[8] === 2){
+                victoria = true;
+                jugador2++;
+                document.getElementById("jug2").innerHTML = jugador2;
+                alert("jugador 2 ha ganado");
+                reiniciarTablero();
+            }
+            else if (tablero[2] === 2 && tablero[4] === 2 && tablero[6] === 2){
+                victoria = true;
+                jugador2++;
+                document.getElementById("jug2").innerHTML = jugador2;
+                alert("jugador 2 ha ganado");
+                reiniciarTablero();
+            }
+            else if (contador == 9){
+                contador++;
+                victoria = true;
+                empate++;
+                document.getElementById("emp").innerHTML = empate;
+                alert("Ha sido empate");
+                reiniciarTablero();
+            }
+        }
+
+        function reiniciarTablero(){
+
+            if (victoria == true){                
+        for(let i = 0; i < tablero.length; i++) {
+            tablero[i] = "v";
+            document.getElementById(i).innerHTML = ""; // Borra la imagen del tablero
+        }
+        victoria = false; // Reinicia la variable de victoria
+        contador = 0; // Reinicia el contador
+        jugador = 1;
+        }
+
+        }
+    </script>
+</body>
+</html>

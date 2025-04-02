@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+    margin-top: 2%;
+}
+#tablero, #tablero td{
+    margin: auto;
+    border: 1px black solid;
+    border-collapse: collapse;
+    margin-top: 2%;
+}
+#tablero td{
+    width: 120px;
+    height: 120px;
+}
+#tablero p{
+    color: white;
+}
+img{
+    width: 95%;
+    height: 95%;
+}
+#contadores, #contadores td{
+    margin: auto;
+    border: 1px black solid;
+    border-collapse: collapse;
+    margin-top: 6%;
+}
+#contadores td{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+}
